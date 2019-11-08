@@ -1,2 +1,2 @@
 # PongPlusPlus
-Pong made in C++
+Pong made in C++. Run main.cpp to run game.
