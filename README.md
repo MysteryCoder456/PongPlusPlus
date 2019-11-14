@@ -1,2 +1,7 @@
 # PongPlusPlus
-Pong made in C++. Run main.cpp to run game.
+
+Pong made in C++
+
+## Running the game
+
+You can use either `./PongPlusPlus` or run the `main.cpp` file directly from the `sources` folder
