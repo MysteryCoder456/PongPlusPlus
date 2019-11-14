@@ -5,8 +5,8 @@
 #include <string>
 
 // Include header files
-#include "../Headers/ClearScreen.h"
-#include "../Headers/getch.h"
+#include "../headers/ClearScreen.h"
+#include "../headers/getch.h"
 
 bool gameOver;
 const int FPS = 6;
