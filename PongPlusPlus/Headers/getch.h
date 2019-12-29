@@ -1,8 +1,8 @@
 //
 //  getch.h
-//  Snake Game
+//  PongPlusPlus
 //
-//  Created by Harmeet on 19/10/2019.
+//  Created by Harmeet on 30/12/2019.
 //  Copyright © 2019 MysteryCoder456. All rights reserved.
 //
 
