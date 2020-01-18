@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9CFE8DC23D2EFF300360A55 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CFE8DB23D2EFF300360A55 /* OpenGL.framework */; };
+		C9CFE8DE23D2F00900360A55 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CFE8DD23D2F00900360A55 /* libglfw.3.3.dylib */; };
+		C9CFE8E623D305A800360A55 /* paddle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9CFE8E523D305A800360A55 /* paddle.cpp */; };
+		C9CFE8E823D3164E00360A55 /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9CFE8E723D3164E00360A55 /* game.cpp */; };
 		C9DAD11523B9622800E4BAC9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9DAD11423B9622800E4BAC9 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,11 +27,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C9CFE8DB23D2EFF300360A55 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		C9CFE8DD23D2F00900360A55 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../../usr/local/Cellar/glfw/3.3.1/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
+		C9CFE8DF23D2FE2C00360A55 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../../usr/local/Cellar/glew/2.1.0_1/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
+		C9CFE8E423D3057D00360A55 /* paddle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = paddle.h; sourceTree = "<group>"; };
+		C9CFE8E523D305A800360A55 /* paddle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = paddle.cpp; sourceTree = "<group>"; };
+		C9CFE8E723D3164E00360A55 /* game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = game.cpp; sourceTree = "<group>"; };
+		C9CFE8E923D3177300360A55 /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
 		C9DAD11123B9622800E4BAC9 /* PongPlusPlus */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PongPlusPlus; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9DAD11423B9622800E4BAC9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C9DE8A3A23B9658000ED81B7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		C9DE8A3B23B9659200ED81B7 /* getch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = getch.h; sourceTree = "<group>"; };
-		C9DE8A3D23B9664200ED81B7 /* ClearScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClearScreen.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9CFE8DE23D2F00900360A55 /* libglfw.3.3.dylib in Frameworks */,
+				C9CFE8DC23D2EFF300360A55 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,10 +55,20 @@
 		C991217023B9654D00B52752 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				C9DE8A3B23B9659200ED81B7 /* getch.h */,
-				C9DE8A3D23B9664200ED81B7 /* ClearScreen.h */,
+				C9CFE8E923D3177300360A55 /* game.h */,
+				C9CFE8E423D3057D00360A55 /* paddle.h */,
 			);
 			path = Headers;
+			sourceTree = "<group>";
+		};
+		C9CFE8DA23D2EFF300360A55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9CFE8DF23D2FE2C00360A55 /* libGLEW.2.1.0.dylib */,
+				C9CFE8DD23D2F00900360A55 /* libglfw.3.3.dylib */,
+				C9CFE8DB23D2EFF300360A55 /* OpenGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C9DAD10823B9622800E4BAC9 = {
@@ -56,6 +77,7 @@
 				C9DE8A3A23B9658000ED81B7 /* README.md */,
 				C9DAD11323B9622800E4BAC9 /* PongPlusPlus */,
 				C9DAD11223B9622800E4BAC9 /* Products */,
+				C9CFE8DA23D2EFF300360A55 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +101,8 @@
 		C9DAD11B23B9623100E4BAC9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C9CFE8E723D3164E00360A55 /* game.cpp */,
+				C9CFE8E523D305A800360A55 /* paddle.cpp */,
 				C9DAD11423B9622800E4BAC9 /* main.cpp */,
 			);
 			path = Sources;
@@ -142,6 +166,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9DAD11523B9622800E4BAC9 /* main.cpp in Sources */,
+				C9CFE8E623D305A800360A55 /* paddle.cpp in Sources */,
+				C9CFE8E823D3164E00360A55 /* game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +289,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U29V6K83J6;
 				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw/3.3.1/lib,
+					/usr/local/Cellar/glew/2.1.0_1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -273,6 +306,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U29V6K83J6;
 				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw/3.3.1/lib,
+					/usr/local/Cellar/glew/2.1.0_1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
