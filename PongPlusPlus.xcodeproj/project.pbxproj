@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9B039CF23D4B40700C9455C /* ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9B039CE23D4B40700C9455C /* ball.cpp */; };
 		C9CFE8DC23D2EFF300360A55 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CFE8DB23D2EFF300360A55 /* OpenGL.framework */; };
 		C9CFE8DE23D2F00900360A55 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CFE8DD23D2F00900360A55 /* libglfw.3.3.dylib */; };
 		C9CFE8E623D305A800360A55 /* paddle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9CFE8E523D305A800360A55 /* paddle.cpp */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C9B039CE23D4B40700C9455C /* ball.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ball.cpp; sourceTree = "<group>"; };
+		C9B039D023D4B43A00C9455C /* ball.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ball.h; sourceTree = "<group>"; };
 		C9CFE8DB23D2EFF300360A55 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		C9CFE8DD23D2F00900360A55 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../../usr/local/Cellar/glfw/3.3.1/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
 		C9CFE8DF23D2FE2C00360A55 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../../usr/local/Cellar/glew/2.1.0_1/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
@@ -57,6 +60,7 @@
 			children = (
 				C9CFE8E923D3177300360A55 /* game.h */,
 				C9CFE8E423D3057D00360A55 /* paddle.h */,
+				C9B039D023D4B43A00C9455C /* ball.h */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -101,9 +105,10 @@
 		C9DAD11B23B9623100E4BAC9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C9DAD11423B9622800E4BAC9 /* main.cpp */,
 				C9CFE8E723D3164E00360A55 /* game.cpp */,
 				C9CFE8E523D305A800360A55 /* paddle.cpp */,
-				C9DAD11423B9622800E4BAC9 /* main.cpp */,
+				C9B039CE23D4B40700C9455C /* ball.cpp */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9B039CF23D4B40700C9455C /* ball.cpp in Sources */,
 				C9DAD11523B9622800E4BAC9 /* main.cpp in Sources */,
 				C9CFE8E623D305A800360A55 /* paddle.cpp in Sources */,
 				C9CFE8E823D3164E00360A55 /* game.cpp in Sources */,

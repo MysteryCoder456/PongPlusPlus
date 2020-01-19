@@ -9,10 +9,22 @@
 #include <GLFW/glfw3.h>
 #include "game.h"
 
+/* Game object */
+Game pongPlusPlus = Game();
+
+
+/* Keyboard input */
+//void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+//{
+//    pongPlusPlus.Input(key);
+//}
+
+
+/* Entry Point*/
 int main(void)
 {
-    int WIDTH = 800;
-    int HEIGHT = 600;
+    int WIDTH = 1024;
+    int HEIGHT = 680;
     
     GLFWwindow* window;
 
@@ -31,12 +43,15 @@ int main(void)
     /* Make the window's context current */
     glfwMakeContextCurrent(window);
     
-    /* Game object */
-    Game pongPlusPlus = Game();
+    /* Keyboard input */
+//    glfwSetKeyCallback(window, key_callback);
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
+        /* Input Handling */
+        pongPlusPlus.Input(window);
+        
         /* Game Logic */
         pongPlusPlus.Logic();
         

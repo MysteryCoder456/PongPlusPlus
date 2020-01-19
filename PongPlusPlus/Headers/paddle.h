@@ -13,13 +13,9 @@ class Paddle
 {
 public:
     Paddle(double x, double y);
-    double getX();
-    double getY();
-    double getWidth();
-    double getHeight();
+    void move(double xMove, double yMove);
     void render();
     
-private:
     double x;
     double y;
     double width = 0.03;

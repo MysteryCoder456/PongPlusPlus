@@ -14,14 +14,14 @@
 class Game
 {
 public:
-    void Input();
+    void Input(GLFWwindow* window);
     void Logic();
     void Render();
     
 private:
     
-    Paddle p1 = Paddle(-0.7 - 0.05, 0.3 / 2);
-    Paddle p2 = Paddle(0.7, 0.3 / 2);
+    Paddle p1 = Paddle(-0.8 - 0.05, 0.3 / 2);
+    Paddle p2 = Paddle(0.8, 0.3 / 2);
 };
 
 #endif /* game_h */

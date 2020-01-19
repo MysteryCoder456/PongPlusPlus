@@ -10,18 +10,20 @@
 #include <stdio.h>
 #include "paddle.h"
 
-Paddle::Paddle(double x_pos, double y_pos)
+Paddle::Paddle(double xPos, double yPos)
 {
-    x = x_pos;
-    y = y_pos;
+    x = xPos;
+    y = yPos;
 }
 
-double Paddle::getX() {return x;}
-double Paddle::getY() {return y;}
-double Paddle::getWidth() {return width;}
-double Paddle::getHeight() {return height;}
+void Paddle::move(double xMove, double yMove)
+{
+    x += xMove;
+    y += yMove;
+}
 
-void Paddle::render() {
+void Paddle::render()
+{
     glBegin(GL_QUADS);
     glVertex2d(x, y);
     glVertex2d(x + width, y);
