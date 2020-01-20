@@ -24,6 +24,11 @@ void Ball::move(double xMove, double yMove)
     y += yMove;
 }
 
+void Ball::update()
+{
+    move(xVel, yVel);
+}
+
 void Ball::render()
 {
     glBegin(GL_QUADS);

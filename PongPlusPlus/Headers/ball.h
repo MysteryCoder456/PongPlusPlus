@@ -13,7 +13,7 @@ class Ball
 {
 public:
     Ball(double xPos, double yPos);
-    void move(double xMove, double yMove);
+    void update();
     void render();
     
     double x;
@@ -21,8 +21,11 @@ public:
     double width;
     double height;
     
-    double xVel;
-    double yVel;
+    double xVel = 0;
+    double yVel = 0;
+    
+private:
+    void move(double xMove, double yMove);
 };
 
 #endif /* ball_h */

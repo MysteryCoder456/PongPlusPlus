@@ -8,7 +8,26 @@
 
 //#include <stdio.h>
 #include <GLFW/glfw3.h>
+#include <stdlib.h>
+#include <time.h>
 #include "game.h"
+
+Game::Game()
+{
+    srand(static_cast<unsigned int>(time(nullptr)));
+    
+    double bVel = 0.005;
+    if (rand() % 10 < 5)
+    {
+        b.xVel = -bVel;
+        b.yVel = bVel;
+    }
+    else
+    {
+        b.xVel = bVel;
+        b.yVel = -bVel;
+    }
+}
 
 void Game::Input(GLFWwindow* window)
 {
@@ -48,6 +67,8 @@ void Game::Logic()
         p2.y = 1;
     if (p2.y - p2.height < -1)
         p2.y = -1 + p2.height;
+    
+    b.update();
 }
 
 void Game::Render()

@@ -15,6 +15,7 @@
 class Game
 {
 public:
+    Game();
     void Input(GLFWwindow* window);
     void Logic();
     void Render();
