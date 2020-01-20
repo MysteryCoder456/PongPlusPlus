@@ -52,6 +52,8 @@ void Game::Logic()
 
 void Game::Render()
 {
+    b.render();
+    
     p1.render();
     p2.render();
 }

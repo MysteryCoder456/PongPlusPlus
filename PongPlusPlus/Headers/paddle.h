@@ -18,8 +18,8 @@ public:
     
     double x;
     double y;
-    double width = 0.03;
-    double height = 0.3;
+    double width;
+    double height;
 };
 
 #endif /* paddle_h */

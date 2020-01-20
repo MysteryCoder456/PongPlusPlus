@@ -14,6 +14,8 @@ Paddle::Paddle(double xPos, double yPos)
 {
     x = xPos;
     y = yPos;
+    width = 0.03;
+    height = 0.3;
 }
 
 void Paddle::move(double xMove, double yMove)
