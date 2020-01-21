@@ -14,6 +14,7 @@ class Paddle
 public:
     Paddle(double x, double y);
     void move(double xMove, double yMove);
+    void update();
     void render();
     
     double x;

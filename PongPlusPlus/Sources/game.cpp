@@ -14,12 +14,12 @@
 
 Game::Game()
 {
-    srand(static_cast<unsigned int>(time(nullptr)));
+    srand(static_cast<unsigned int>(time(0)));
     
     double bVel = 0.005;
     if (rand() % 10 < 5)
     {
-        b.xVel = -bVel;
+        b.xVel = bVel;
         b.yVel = bVel;
     }
     else
@@ -56,19 +56,30 @@ void Game::Input(GLFWwindow* window)
 
 void Game::Logic()
 {
-    /* Player 1 */
-    if (p1.y > 1)
-        p1.y = 1;
-    if (p1.y - p1.height < -1)
-        p1.y = -1 + p1.height;
-    
-    /* Player 2 */
-    if (p2.y > 1)
-        p2.y = 1;
-    if (p2.y - p2.height < -1)
-        p2.y = -1 + p2.height;
-    
     b.update();
+    
+    p1.update();
+    p2.update();
+    
+    // Ball collisions
+    if (b.x <= p1.x + p1.width)
+    {
+        if (b.y + b.height >= p1.y && b.y <= p1.y + p1.height)
+        {
+            b.xVel *= -1;
+        }
+    }
+    
+    if (b.x + b.width >= p2.x)
+    {
+        if (b.y >= p2.y && b.y <= p2.y + p2.height)
+        {
+            b.xVel *= -1;
+        }
+    }
+    
+    if (b.y + b.height > 1 || b.y < -1)
+        b.yVel *= -1;
 }
 
 void Game::Render()

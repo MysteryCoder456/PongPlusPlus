@@ -34,7 +34,7 @@ void Ball::render()
     glBegin(GL_QUADS);
     glVertex2d(x, y);
     glVertex2d(x + width, y);
-    glVertex2d(x + width, y - height);
-    glVertex2d(x, y - height);
+    glVertex2d(x + width, y + height);
+    glVertex2d(x, y + height);
     glEnd();
 }

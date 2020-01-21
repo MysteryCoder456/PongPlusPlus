@@ -24,12 +24,20 @@ void Paddle::move(double xMove, double yMove)
     y += yMove;
 }
 
+void Paddle::update()
+{
+    if (y + height > 1)
+        y = 1 - height;
+    if (y < -1)
+        y = -1;
+}
+
 void Paddle::render()
 {
     glBegin(GL_QUADS);
     glVertex2d(x, y);
     glVertex2d(x + width, y);
-    glVertex2d(x + width, y - height);
-    glVertex2d(x, y - height);
+    glVertex2d(x + width, y + height);
+    glVertex2d(x, y + height);
     glEnd();
 }
