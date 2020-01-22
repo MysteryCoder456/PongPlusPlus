@@ -10,16 +10,18 @@
 #include <GLFW/glfw3.h>
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h>
 #include "game.h"
+
+double bVel = 0.01;
 
 Game::Game()
 {
-    srand(static_cast<unsigned int>(time(0)));
-    
-    double bVel = 0.005;
+    srand(static_cast<unsigned int>(time(nullptr)));
+
     if (rand() % 10 < 5)
     {
-        b.xVel = bVel;
+        b.xVel = -bVel;
         b.yVel = bVel;
     }
     else
@@ -31,7 +33,7 @@ Game::Game()
 
 void Game::Input(GLFWwindow* window)
 {
-    double speed = 0.015;
+    double speed = 0.014;
     
     /* Player 1 */
     if (glfwGetKey(window, GLFW_KEY_W))
@@ -61,21 +63,49 @@ void Game::Logic()
     p1.update();
     p2.update();
     
-    // Ball collisions
-    if (b.x <= p1.x + p1.width)
+    /* Ball and Player Collisions */
+    // Player 1
+    if (b.x <= p1.x + p1.width && b.x + b.width >= p1.x)
     {
         if (b.y + b.height >= p1.y && b.y <= p1.y + p1.height)
         {
             b.xVel *= -1;
+            
+            int chance = rand() % 10;
+
+            if (chance < 3)
+                b.yVel = -bVel;
+            else if (chance > 3 && chance < 6)
+                b.yVel = bVel;
+            else
+                b.yVel = 0;
         }
     }
-    
-    if (b.x + b.width >= p2.x)
+
+    // Player 2
+    if (b.x <= p2.x + p2.width && b.x + b.width >= p2.x)
     {
         if (b.y >= p2.y && b.y <= p2.y + p2.height)
         {
             b.xVel *= -1;
+            
+            int chance = rand() % 10;
+
+            if (chance < 3)
+                b.yVel = -bVel;
+            else if (chance > 3 && chance < 6)
+                b.yVel = bVel;
+            else
+                b.yVel = 0;
         }
+    }
+    
+    
+    /* Edge Collision */
+    if (b.x < -1 || b.x + b.width > 1)
+    {
+        sleep(2);
+        exit(0);
     }
     
     if (b.y + b.height > 1 || b.y < -1)

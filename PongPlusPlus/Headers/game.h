@@ -22,8 +22,8 @@ public:
     
 private:
     Ball b = Ball(0, 0);
-    Paddle p1 = Paddle(-0.8 - 0.05, 0.3 / -2);
-    Paddle p2 = Paddle(0.8, 0.3 / -2);
+    Paddle p1 = Paddle(-0.8 - 0.02, 0.2 / -2);
+    Paddle p2 = Paddle(0.8, 0.2 / -2);
 };
 
 #endif /* game_h */
